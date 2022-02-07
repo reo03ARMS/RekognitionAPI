@@ -3,7 +3,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 import urllib.error
 import urllib.request
-import RekognitionAPI.main.tasksPy.keepJson as keepJson
+import main.tasksPy.keepJson as keepJson
 
 
 def download_file(url,count):
@@ -20,7 +20,7 @@ def download_file(url,count):
 
 class ConnectFirebase():
     def __init__(self):
-        cred = credentials.Certificate("./ServisAcoountKey.json")
+        cred = credentials.Certificate("/Users/reo0317/Documents/Reo0330/卒業制作/RekognitionAPI/ServisAcoountKey.json")
         firebase_admin.initialize_app(cred)
         self.db = firestore.client()
 
