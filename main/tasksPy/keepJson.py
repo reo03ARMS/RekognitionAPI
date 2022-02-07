@@ -4,7 +4,7 @@ class keepJson():
     def __init__(self,id,imgURL) :
         self.id = id
         self.data = {id:{"imgURL":imgURL}}
-        self.filename = "Images/localData.json"
+        self.filename = "main/tasksPy/Images/localData.json"
         
     def appdateJson(self):
         with open(self.filename,"r") as j_w:

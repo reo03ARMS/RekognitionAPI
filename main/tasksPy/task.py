@@ -1,5 +1,5 @@
-import RekognitionAPI.main.tasksPy.firebaseAcsess as firebaseAcsess
-import RekognitionAPI.main.tasksPy.Rekognition as Rekognition
+import main.tasksPy.firebaseAcsess as firebaseAcsess
+import main.tasksPy.Rekognition as Rekognition
 
 
 
