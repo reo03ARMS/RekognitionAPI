@@ -77,10 +77,12 @@ WSGI_APPLICATION = 'RekognitionAPI.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME':str( BASE_DIR / 'db.sqlite3'),
+            }
+
+       
 }
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379/1')
