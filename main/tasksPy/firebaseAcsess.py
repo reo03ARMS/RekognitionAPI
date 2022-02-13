@@ -20,7 +20,7 @@ def download_file(url,count):
 
 class ConnectFirebase():
     def __init__(self):
-        cred = credentials.Certificate("/Users/reo0317/Documents/Reo0330/卒業制作/RekognitionAPI/ServisAcoountKey.json")
+        cred = credentials.Certificate("/home/ec2-user/ServisAcoountKey.json")
         firebase_admin.initialize_app(cred)
         self.db = firestore.client()
 
