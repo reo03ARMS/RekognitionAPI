@@ -23,8 +23,8 @@ class ConnectFirebase():
     def __init__(self):
         if not firebase_admin._apps:
             # 初期済みでない場合は初期化処理を行う
-            cred = credentials.Certificate("/home/ec2-user/ServisAcoountKey.json")
-            # cred = credentials.Certificate('../AcoountKey.json') #ローカル
+            # cred = credentials.Certificate("/home/ec2-user/ServisAcoountKey.json")
+            cred = credentials.Certificate('../AcoountKey.json') #ローカル
             firebase_admin.initialize_app(cred)
         self.db = firestore.client()
 

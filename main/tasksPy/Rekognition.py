@@ -8,8 +8,8 @@ import pandas as pd
 #configparserのインスタンスを作る
 ini = configparser.ConfigParser()
 #あらかじめ作ったiniファイルを読み込む
-ini.read("/home/ec2-user/config.ini", "UTF-8")
-# ini.read("../config.ini", "UTF-8") #ローカル
+# ini.read("/home/ec2-user/config.ini", "UTF-8")
+ini.read("../config.ini", "UTF-8") #ローカル
 
 
 # 使用するバケットを指定する
