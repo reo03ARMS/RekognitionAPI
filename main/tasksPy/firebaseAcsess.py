@@ -4,13 +4,14 @@ from firebase_admin import firestore
 import urllib.error
 import urllib.request
 import main.tasksPy.keepJson as keepJson
+import os
 
 
 def download_file(url,count):
     try:
         with urllib.request.urlopen(url) as web_file:
             data = web_file.read()
-            dst_path= "Images/"+str(count)+".jpg"
+            dst_path= "main/tasksPy/Images/"+str(count)+".jpg"
             with open(dst_path, mode='wb') as local_file:
                 local_file.write(data)
                 return dst_path
@@ -20,8 +21,11 @@ def download_file(url,count):
 
 class ConnectFirebase():
     def __init__(self):
-        cred = credentials.Certificate("/home/ec2-user/ServisAcoountKey.json")
-        firebase_admin.initialize_app(cred)
+        if not firebase_admin._apps:
+            # 初期済みでない場合は初期化処理を行う
+            cred = credentials.Certificate("/home/ec2-user/ServisAcoountKey.json")
+            # cred = credentials.Certificate('../AcoountKey.json') #ローカル
+            firebase_admin.initialize_app(cred)
         self.db = firestore.client()
 
 

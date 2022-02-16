@@ -9,6 +9,8 @@ import pandas as pd
 ini = configparser.ConfigParser()
 #あらかじめ作ったiniファイルを読み込む
 ini.read("/home/ec2-user/config.ini", "UTF-8")
+# ini.read("../config.ini", "UTF-8") #ローカル
+
 
 # 使用するバケットを指定する
 bucket = "rekognitionsnaphy"
@@ -36,7 +38,7 @@ class RekognitionMain():
         # fileimg = Image.open(filename)
         self.filename = filename
         self.id = id
-        print("id :" +self.id)
+        # print("id :" +self.id)
         
         
     
@@ -115,6 +117,7 @@ class dataframe():
             
             sub_df = pd.read_csv('sample01.csv', header=0,index_col=0)
             print(sub_df)
+            return sub_df
     
 
         
