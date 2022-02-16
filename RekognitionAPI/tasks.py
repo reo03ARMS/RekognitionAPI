@@ -13,6 +13,6 @@ def add(x1, x2):
 @shared_task
 def rekognition():
     print("処理開始")
-    task.main()
+    task.heiretu()
     print("処理終了")
     return
